@@ -33,9 +33,8 @@ function ysu_set_email_content_type( $contentType ) {
 
 function ysu_get_comment_author_email( $comment ) {
 	$replied_comment        = get_comment( $comment->comment_parent );
-	$author_replied_comment = get_userdata( $replied_comment->user_id );
 
-	return $author_replied_comment->user_email;
+	return $replied_comment->comment_author_email;
 }
 
 function ysu_get_email_subject( $post ) {
