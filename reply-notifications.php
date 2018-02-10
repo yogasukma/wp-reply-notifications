@@ -22,7 +22,7 @@ function ysu_send_email_notification( $comment ) {
 
 	add_filter( "wp_mail_content_type", "ysu_set_email_content_type" );
 
-	wp_mail( get_comment_author_email( $comment ), ysu_get_email_subject( $post ), ysu_get_email_content( $post, $comment ) );
+	wp_mail( ysu_get_comment_author_email( $comment ), ysu_get_email_subject( $post ), ysu_get_email_content( $post, $comment ) );
 
 	remove_filter( "wp_mail_content_type", "ysu_set_email_content_type" );
 }
